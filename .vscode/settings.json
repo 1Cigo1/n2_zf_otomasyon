@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "zf_task"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

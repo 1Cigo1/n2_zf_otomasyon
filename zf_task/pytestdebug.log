@@ -1,0 +1,874 @@
+versions pytest-9.1.1, python-3.12.0.final.0
+invocation_dir=C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task
+cwd=C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task
+args=('tests/test_02_reservation.py', '--debug')
+
+  pytest_cmdline_main [hook]
+      config: <_pytest.config.Config object at 0x000001F2269437A0>
+    pytest_plugin_registered [hook]
+        plugin: <Session  exitstatus='<UNSET>' testsfailed=0 testscollected=0>
+        plugin_name: session
+        manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+    finish pytest_plugin_registered --> [] [hook]
+    pytest_configure [hook]
+        config: <_pytest.config.Config object at 0x000001F2269437A0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001F227E0E1B0>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001F227E0E150>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: faulthandler [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: pdb [assertion]
+    early skip of rewriting module: cmd [assertion]
+    early skip of rewriting module: code [assertion]
+    early skip of rewriting module: codeop [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+          plugin_name: 2139508065008
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x000001F2269437A0>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\mark\\__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\assertion\\__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.subtests' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\subtests.py'>
+          plugin_name: subtests
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_base_url.plugin' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_base_url\\plugin.py'>
+          plugin_name: base_url
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_playwright.pytest_playwright' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_playwright\\pytest_playwright.py'>
+          plugin_name: playwright
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=9 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0x000001F22702D9A0>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=11 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0x000001F227E0DA30>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=7 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tests.conftest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\tests\\conftest.py'>
+          plugin_name: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001F227E0E1B0>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001F227E0E150>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x000001F227E2DAF0>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+    matched marked file '_pytest.terminalprogress' (from '_pytest.terminalprogress') [assertion]
+    find_module called for: _pytest.terminalprogress [assertion]
+    found cached rewritten pyc for C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\venv\Lib\site-packages\_pytest\terminalprogress.py [assertion]
+      pytest_configure [hook]
+          config: <_pytest.config.Config object at 0x000001F2269437A0>
+        pytest_plugin_registered [hook]
+            plugin: <_pytest.terminal.TerminalProgressPlugin object at 0x000001F227E4E900>
+            plugin_name: terminalprogress-plugin
+            manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+        finish pytest_plugin_registered --> [] [hook]
+      finish pytest_configure --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminalprogress' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\terminalprogress.py'>
+          plugin_name: terminalprogress
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x000001F22702D970>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+    finish pytest_configure --> [] [hook]
+    pytest_sessionstart [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+          plugin_name: 2139508065008
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x000001F2269437A0>
+          plugin_name: pytestconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\mark\\__init__.py'>
+          plugin_name: mark
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\main.py'>
+          plugin_name: main
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\runner.py'>
+          plugin_name: runner
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\fixtures.py'>
+          plugin_name: fixtures
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\helpconfig.py'>
+          plugin_name: helpconfig
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\python.py'>
+          plugin_name: python
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\terminal.py'>
+          plugin_name: terminal
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\debugging.py'>
+          plugin_name: debugging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\unittest.py'>
+          plugin_name: unittest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\capture.py'>
+          plugin_name: capture
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\skipping.py'>
+          plugin_name: skipping
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\legacypath.py'>
+          plugin_name: legacypath
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\tmpdir.py'>
+          plugin_name: tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\monkeypatch.py'>
+          plugin_name: monkeypatch
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\recwarn.py'>
+          plugin_name: recwarn
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\pastebin.py'>
+          plugin_name: pastebin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\assertion\\__init__.py'>
+          plugin_name: assertion
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\junitxml.py'>
+          plugin_name: junitxml
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\doctest.py'>
+          plugin_name: doctest
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\cacheprovider.py'>
+          plugin_name: cacheprovider
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\setuponly.py'>
+          plugin_name: setuponly
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\setupplan.py'>
+          plugin_name: setupplan
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\stepwise.py'>
+          plugin_name: stepwise
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\unraisableexception.py'>
+          plugin_name: unraisableexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\threadexception.py'>
+          plugin_name: threadexception
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\warnings.py'>
+          plugin_name: warnings
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\logging.py'>
+          plugin_name: logging
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\reports.py'>
+          plugin_name: reports
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\faulthandler.py'>
+          plugin_name: faulthandler
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.subtests' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\subtests.py'>
+          plugin_name: subtests
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_base_url.plugin' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_base_url\\plugin.py'>
+          plugin_name: base_url
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pytest_playwright.pytest_playwright' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_playwright\\pytest_playwright.py'>
+          plugin_name: playwright
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=9 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0x000001F22702D9A0>' mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=11 _state='suspended' tmpfile=<_io.TextIOWrapper name='<tempfile._TemporaryFileWrapper object at 0x000001F227E0DA30>' mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=7 _state='started' tmpfile=<_io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          plugin_name: capturemanager
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'tests.conftest' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\tests\\conftest.py'>
+          plugin_name: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\conftest.py
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          plugin_name: session
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x000001F227E0E1B0>
+          plugin_name: lfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x000001F227E0E150>
+          plugin_name: nfplugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          plugin_name: legacypath-tmpdir
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x000001F227E2DAF0>
+          plugin_name: terminalreporter
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalProgressPlugin object at 0x000001F227E4E900>
+          plugin_name: terminalprogress-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminalprogress' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\terminalprogress.py'>
+          plugin_name: terminalprogress
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x000001F22702D970>
+          plugin_name: logging-plugin
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.fixtures.FixtureManager object at 0x000001F227E0E360>
+          plugin_name: funcmanage
+          manager: <_pytest.config.PytestPluginManager object at 0x000001F2249E42F0>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_report_header [hook]
+          config: <_pytest.config.Config object at 0x000001F2269437A0>
+          start_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task
+      early skip of rewriting module: email.parser [assertion]
+      early skip of rewriting module: email.feedparser [assertion]
+      finish pytest_report_header --> [['rootdir: C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task', 'plugins: base-url-2.1.0, playwright-0.8.0'], ['using: pytest-9.1.1', 'registered third-party plugins:', '  pytest-base-url-2.1.0 at C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_base_url\\plugin.py', '  pytest-playwright-0.8.0 at C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\pytest_playwright\\pytest_playwright.py']] [hook]
+    finish pytest_sessionstart --> [] [hook]
+    pytest_collection [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    perform_collect <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0> ['tests/test_02_reservation.py'] [collection]
+        pytest_collectstart [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        finish pytest_collectstart --> [] [hook]
+        pytest_make_collect_report [hook]
+            collector: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        processing argument CollectionArgument(path=WindowsPath('C:/Users/cihangir/Desktop/ziraat_filo_otomasyon/zf_task/tests/test_02_reservation.py'), parts=[], parametrization=None, module_name=None, original_index=0) [collection]
+            pytest_collect_directory [hook]
+                path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task
+                parent: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+            finish pytest_collect_directory --> <Dir zf_task> [hook]
+            pytest_collectstart [hook]
+                collector: <Dir zf_task>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Dir zf_task>
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\.env
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\.env
+                  parent: <Dir zf_task>
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\.gitignore
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\.gitignore
+                  parent: <Dir zf_task>
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\.pytest_cache
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\components
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\components
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Dir components> [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\pages
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\pages
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Dir pages> [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\pytestdebug.log
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\pytestdebug.log
+                  parent: <Dir zf_task>
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\reports
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\reports
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Dir reports> [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Package tests> [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\user_data
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\user_data
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Dir user_data> [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\utils
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_directory [hook]
+                  path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\utils
+                  parent: <Dir zf_task>
+              finish pytest_collect_directory --> <Package utils> [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\venv
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> True [hook]
+            finish pytest_make_collect_report --> <CollectReport '.' lenresult=6 outcome='passed'> [hook]
+            pytest_collectstart [hook]
+                collector: <Package tests>
+            finish pytest_collectstart --> [] [hook]
+            pytest_make_collect_report [hook]
+                collector: <Package tests>
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\__init__.py
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\__init__.py
+                  parent: <Package tests>
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\__pycache__
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> True [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\conftest.py
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\conftest.py
+                  parent: <Package tests>
+              finish pytest_collect_file --> [] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_01_login.py
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_01_login.py
+                  parent: <Package tests>
+                pytest_pycollect_makemodule [hook]
+                    module_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_01_login.py
+                    parent: <Package tests>
+                finish pytest_pycollect_makemodule --> <Module test_01_login.py> [hook]
+              finish pytest_collect_file --> [<Module test_01_login.py>] [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_02_reservation.py
+                  parent: <Package tests>
+                pytest_pycollect_makemodule [hook]
+                    module_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_02_reservation.py
+                    parent: <Package tests>
+                finish pytest_pycollect_makemodule --> <Module test_02_reservation.py> [hook]
+              finish pytest_collect_file --> [<Module test_02_reservation.py>] [hook]
+              pytest_ignore_collect [hook]
+                  collection_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_03_long_term_rental.py
+                  config: <_pytest.config.Config object at 0x000001F2269437A0>
+              finish pytest_ignore_collect --> None [hook]
+              pytest_collect_file [hook]
+                  file_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_03_long_term_rental.py
+                  parent: <Package tests>
+                pytest_pycollect_makemodule [hook]
+                    module_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_03_long_term_rental.py
+                    parent: <Package tests>
+                finish pytest_pycollect_makemodule --> <Module test_03_long_term_rental.py> [hook]
+              finish pytest_collect_file --> [<Module test_03_long_term_rental.py>] [hook]
+            finish pytest_make_collect_report --> <CollectReport 'tests' lenresult=3 outcome='passed'> [hook]
+        finish pytest_make_collect_report --> <CollectReport '' lenresult=1 outcome='passed'> [hook]
+        pytest_collectreport [hook]
+            report: <CollectReport '' lenresult=1 outcome='passed'>
+        finish pytest_collectreport --> [] [hook]
+    genitems <Module test_02_reservation.py> [collection]
+      pytest_collectstart [hook]
+          collector: <Module test_02_reservation.py>
+      finish pytest_collectstart --> [] [hook]
+      pytest_make_collect_report [hook]
+          collector: <Module test_02_reservation.py>
+      find_module called for: tests.test_02_reservation [assertion]
+      matched test file (was specified on cmdline): 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\tests\\test_02_reservation.py' [assertion]
+      _read_pyc(C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task\tests\test_02_reservation.py): out of date [assertion]
+      rewriting WindowsPath('C:/Users/cihangir/Desktop/ziraat_filo_otomasyon/zf_task/tests/test_02_reservation.py') [assertion]
+      early skip of rewriting module: pages [assertion]
+      early skip of rewriting module: pages.login_page [assertion]
+      early skip of rewriting module: pages.base_page [assertion]
+      early skip of rewriting module: pages.dashboard_page [assertion]
+      early skip of rewriting module: pages.reservation_page [assertion]
+      early skip of rewriting module: pages.edit_process_page [assertion]
+      early skip of rewriting module: components [assertion]
+      early skip of rewriting module: components.adres_modal [assertion]
+      early skip of rewriting module: components.ehliyet_modal [assertion]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: @py_builtins
+            obj: <module 'builtins' (built-in)>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: @pytest_ar
+            obj: <module '_pytest.assertion.rewrite' from 'C:\\Users\\cihangir\\Desktop\\ziraat_filo_otomasyon\\zf_task\\venv\\Lib\\site-packages\\_pytest\\assertion\\rewrite.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: re
+            obj: <module 're' from 'C:\\Users\\cihangir\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\re\\__init__.py'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: Config
+            obj: <class 'utils.config_reader.Config'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: LoginPage
+            obj: <class 'pages.login_page.LoginPage'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: DashboardPage
+            obj: <class 'pages.dashboard_page.DashboardPage'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: ReservationPage
+            obj: <class 'pages.reservation_page.ReservationPage'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: EditProcessPage
+            obj: <class 'pages.edit_process_page.EditProcessPage'>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: expect
+            obj: <playwright.sync_api.Expect object at 0x000001F227158260>
+        finish pytest_pycollect_makeitem --> None [hook]
+        pytest_pycollect_makeitem [hook]
+            collector: <Module test_02_reservation.py>
+            name: test_navigate_and_select_calendar_range
+            obj: <function test_navigate_and_select_calendar_range at 0x000001F227E74EA0>
+          pytest_generate_tests [hook]
+              metafunc: <_pytest.python.Metafunc object at 0x000001F226F2A090>
+          finish pytest_generate_tests --> [] [hook]
+        finish pytest_pycollect_makeitem --> [<Function test_navigate_and_select_calendar_range>] [hook]
+      finish pytest_make_collect_report --> <CollectReport 'tests/test_02_reservation.py' lenresult=1 outcome='passed'> [hook]
+    genitems <Function test_navigate_and_select_calendar_range> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_navigate_and_select_calendar_range>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collectreport [hook]
+          report: <CollectReport 'tests/test_02_reservation.py' lenresult=1 outcome='passed'>
+      finish pytest_collectreport --> [] [hook]
+      pytest_collection_modifyitems [hook]
+          session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          config: <_pytest.config.Config object at 0x000001F2269437A0>
+          items: [<Function test_navigate_and_select_calendar_range>]
+      finish pytest_collection_modifyitems --> [] [hook]
+      pytest_collection_finish [hook]
+          session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        pytest_report_collectionfinish [hook]
+            config: <_pytest.config.Config object at 0x000001F2269437A0>
+            start_path: C:\Users\cihangir\Desktop\ziraat_filo_otomasyon\zf_task
+            items: [<Function test_navigate_and_select_calendar_range>]
+        finish pytest_report_collectionfinish --> [] [hook]
+      finish pytest_collection_finish --> [] [hook]
+    finish pytest_collection --> None [hook]
+    pytest_runtestloop [hook]
+        session: <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=1>
+      pytest_runtest_protocol [hook]
+          item: <Function test_navigate_and_select_calendar_range>
+          nextitem: None
+        pytest_runtest_logstart [hook]
+            nodeid: tests/test_02_reservation.py::test_navigate_and_select_calendar_range
+            location: ('tests\\test_02_reservation.py', 8, 'test_navigate_and_select_calendar_range')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='base_url' scope='session' baseid=''>
+              request: <SubRequest 'base_url' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup -->  [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='_verify_url' scope='session' baseid=''>
+              request: <SubRequest '_verify_url' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup --> None [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='pytestconfig' scope='session' baseid=''>
+              request: <SubRequest 'pytestconfig' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup --> <_pytest.config.Config object at 0x000001F2269437A0> [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='delete_output_dir' scope='session' baseid=''>
+              request: <SubRequest 'delete_output_dir' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup --> None [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='browser_context' scope='session' baseid='tests'>
+              request: <SubRequest 'browser_context' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup --> <BrowserContext browser=<Browser type=<BrowserType name=chromium executable_path=C:\Users\cihangir\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe> version=149.0.7827.55>> [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='clean_page' scope='function' baseid='tests'>
+              request: <SubRequest 'clean_page' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_setup --> <Page url='about:blank'> [hook]
+        finish pytest_runtest_setup --> None [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+            call: <CallInfo when='setup' result: None>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x000001F2269437A0>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_navigate_and_select_calendar_range>
+        pytest_runtest_makereport [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo TimeoutError('Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator("label").filter(has_text="Doğum Yeri (Ülke)").locator("..").first\n') tblen=39>>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='call' outcome='failed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='call' outcome='failed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='call' outcome='failed'>
+              config: <_pytest.config.Config object at 0x000001F2269437A0>
+          finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_exception_interact [hook]
+            node: <Function test_navigate_and_select_calendar_range>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo TimeoutError('Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator("label").filter(has_text="Doğum Yeri (Ülke)").locator("..").first\n') tblen=39>>
+            report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='call' outcome='failed'>
+        finish pytest_exception_interact --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+            nextitem: None
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='clean_page' scope='function' baseid='tests'>
+              request: <SubRequest 'clean_page' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='browser_context' scope='session' baseid='tests'>
+              request: <SubRequest 'browser_context' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='delete_output_dir' scope='session' baseid=''>
+              request: <SubRequest 'delete_output_dir' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pytestconfig' scope='session' baseid=''>
+              request: <SubRequest 'pytestconfig' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='_verify_url' scope='session' baseid=''>
+              request: <SubRequest '_verify_url' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='base_url' scope='session' baseid=''>
+              request: <SubRequest 'base_url' for <Function test_navigate_and_select_calendar_range>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+        finish pytest_runtest_teardown --> None [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_navigate_and_select_calendar_range>
+            call: <CallInfo when='teardown' result: None>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x000001F2269437A0>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: tests/test_02_reservation.py::test_navigate_and_select_calendar_range
+            location: ('tests\\test_02_reservation.py', 8, 'test_navigate_and_select_calendar_range')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+    finish pytest_runtestloop --> True [hook]
+    pytest_sessionfinish [hook]
+        session: <Session  exitstatus=<ExitCode.TESTS_FAILED: 1> testsfailed=1 testscollected=1>
+        exitstatus: 1
+      pytest_terminal_summary [hook]
+          terminalreporter: <_pytest.terminal.TerminalReporter object at 0x000001F227E2DAF0>
+          exitstatus: 1
+          config: <_pytest.config.Config object at 0x000001F2269437A0>
+        pytest_report_teststatus [hook]
+            report: <TestReport 'tests/test_02_reservation.py::test_navigate_and_select_calendar_range' when='call' outcome='failed'>
+            config: <_pytest.config.Config object at 0x000001F2269437A0>
+        finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+      finish pytest_terminal_summary --> [] [hook]
+    finish pytest_sessionfinish --> [] [hook]
+    pytest_unconfigure [hook]
+        config: <_pytest.config.Config object at 0x000001F2269437A0>
+    finish pytest_unconfigure --> [] [hook]
