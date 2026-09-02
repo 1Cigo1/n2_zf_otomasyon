@@ -1,0 +1,25 @@
+# Playwright'ın Python için hazırladığı resmi sanal makine imajı
+image: mcr.microsoft.com/playwright/python:v1.40.0-jammy
+
+stages:
+  - test
+
+playwright_python_testleri:
+  stage: test
+  script:
+    # 1. Gerekli Python kütüphanelerini kur
+    - pip install pytest playwright pytest-playwright python-dotenv
+    
+    # 2. Playwright tarayıcılarını sisteme indir
+    - playwright install chromium
+    
+    # 3. Testleri görünmez (headless) modda ateşle!
+    - pytest tests/ -v -s
+  
+  artifacts:
+    when: always
+    paths:
+      # Testler patlarsa veya başarılı olursa izleyebilmek için raporları kaydet
+      - test-results/
+      - playwright-report/
+    expire_in: 7 days
