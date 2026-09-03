@@ -1,9 +1,0 @@
-# Python sanal ortamı & Önbellek
-venv/
-.pytest_cache/
-__pycache__/
-
-# Şifreler ve Oturum Dosyaları
-.env
-auth_state.json
-user_data/
