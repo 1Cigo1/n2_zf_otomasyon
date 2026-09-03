@@ -35,6 +35,6 @@ class TestCorporateReservation:
         dashboard.iade_menu(Config.E2E_CUSTOMER_IDENTITY_NO)
         conditionPage.vehicle_return_form()
 
-        #dashboard.logout_click()
+        dashboard.logout_click()
 
         clean_page.pause()
