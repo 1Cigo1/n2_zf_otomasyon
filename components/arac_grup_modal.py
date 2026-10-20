@@ -29,20 +29,3 @@ class AracGrupModal:
             modal_kaydet_butonu=self.page.get_by_role("button", name="Kaydet")
             modal_kaydet_butonu.click()
             self.page.wait_for_timeout(1000)
-            
-    
-
-
-
-
-"""
-            page.get_by_role("spinbutton", name="Aylık fiyat (KDV Hariç) Aylık").click()
-            page.get_by_role("spinbutton", name="Aylık fiyat (KDV Hariç) Aylık").fill("200000000")
-            page.get_by_role("textbox", name="Araç Grubu Başlığı Araç Grubu").click()
-            page.get_by_role("textbox", name="Araç Grubu Başlığı Araç Grubu").fill("cm")
-            page.get_by_role("textbox", name="Araç Grubu Başlığı Araç Grubu").press("CapsLock")
-            page.get_by_role("textbox", name="Araç Grubu Başlığı Araç Grubu").press("CapsLock")
-            page.get_by_role("textbox", name="Araç Grubu Başlığı Araç Grubu").fill("cmad")
-            page.get_by_role("textbox", name="Araç Grubu Açıklaması Araç").click()
-            
-"""            

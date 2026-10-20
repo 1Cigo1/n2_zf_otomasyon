@@ -1,4 +1,3 @@
-import re
 from pages.base_page import BasePage
 from components.uzun_donem_kiralama_modal import UzunDonemModal
 from components.arac_grup_modal import AracGrupModal
@@ -10,7 +9,6 @@ class LongTermReservation(BasePage):
 
         
         self.yeni_btn = page.get_by_role("button", name="Yeni" ,exact=True)
-        self.incele_btn = page.locator("button").filter(has_text=re.compile(r"^Detay")).first
         self.table_rows = page.locator("table tbody tr")
         self.yeni_arac_grubu_text = page.get_by_text("Yeni arac grubu").first
         self.kiralanan_araclar_link = page.get_by_role("link", name="Kiralanan Araçlar")

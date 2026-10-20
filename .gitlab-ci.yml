@@ -1,25 +1,216 @@
-# Playwright'ın Python için hazırladığı resmi sanal makine imajı
-image: mcr.microsoft.com/playwright/python:v1.40.0-jammy
+image: mcr.microsoft.com/playwright/python:v1.62.0-noble
 
 stages:
+  - quality
   - test
 
-playwright_python_testleri:
-  stage: test
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  PYTHONUNBUFFERED: "1"
+  HEADLESS: "true"
+  TEST_ENV: "validation"
+  ACTIVE_ROLE: "short"
+  E2E_ALLOW_WRITE: "false"
+  RUN_E2E: "false"
+  SCREENSHOT_DIR: "test-results/screenshots"
+
+cache:
+  key:
+    files:
+      - requirements.txt
+  paths:
+    - .cache/pip/
+
+python_syntax:
+  stage: quality
+  before_script: []
   script:
-    # 1. Gerekli Python kütüphanelerini kur
-    - pip install pytest playwright pytest-playwright python-dotenv
-    
-    # 2. Playwright tarayıcılarını sisteme indir
-    - playwright install chromium
-    
-    # 3. Testleri görünmez (headless) modda ateşle!
-    - pytest tests/ -v -s
-  
+    - python -m compileall -q pages components tests utils
+
+.playwright_python:
+  stage: test
+  before_script:
+    - python -m pip install --disable-pip-version-check -r requirements.txt
+    - mkdir -p reports/html test-results/screenshots
   artifacts:
     when: always
+    reports:
+      junit: test-results/*.xml
     paths:
-      # Testler patlarsa veya başarılı olursa izleyebilmek için raporları kaydet
       - test-results/
-      - playwright-report/
+      - reports/html/
+    # JUnit GitLab'a reports:junit ile ayrıca yükleniyor; ZIP içinde tekrarlanmasın.
+    exclude:
+      - test-results/*.xml
     expire_in: 7 days
+
+login_smoke:
+  extends: .playwright_python
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - when: manual
+  script:
+    - REPORT_NAME=login-smoke python -m pytest -vv --capture=tee-sys tests/test_1000_login.py --html=reports/html/login-smoke.html --self-contained-html --junitxml=test-results/login-smoke.xml
+
+unit_tests:
+  extends: .playwright_python
+  stage: quality
+  script:
+    - REPORT_NAME=unit-tests python -m pytest -vv --capture=tee-sys tests/unit --html=reports/html/unit-tests.html --self-contained-html --junitxml=test-results/unit-tests.xml
+
+# Salt-okunur API testleri; yalnız Play düğmesiyle başlatılır.
+api_smoke_dev:
+  extends: .playwright_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "false"
+  rules:
+    - when: manual
+      allow_failure: true
+  artifacts:
+    reports:
+      junit: test-results/dev-api-smoke.xml
+    paths:
+      - test-results/
+      - reports/html/
+      - reports/api_xml/
+  script:
+    - REPORT_NAME=dev-api-smoke python -m pytest -vv --capture=tee-sys tests/api/test_basit_get.py tests/api/test_collection_get.py tests/api/test_musait_araclar.py --tracing=off --video=off --screenshot=off --html=reports/html/dev-api-smoke.html --self-contained-html --junitxml=test-results/dev-api-smoke.xml
+
+# Gerçek dev rezervasyonu oluşturur; RUN_E2E=true ile otomatik başlamaz.
+api_booking_save_dev:
+  extends: .playwright_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-dev"
+  interruptible: false
+  rules:
+    - when: manual
+      allow_failure: true
+  artifacts:
+    reports:
+      junit: test-results/dev-api-booking-save.xml
+    paths:
+      - test-results/
+      - reports/html/
+      - reports/api_xml/
+      - reports/api_bookings/ci_cancel_receipt.json
+  script:
+    - REPORT_NAME=dev-api-booking-save python -m pytest -vv --capture=tee-sys tests/api/test_rezervasyon_kaydet.py --run-broker-save --tracing=off --video=off --screenshot=off --html=reports/html/dev-api-booking-save.html --self-contained-html --junitxml=test-results/dev-api-booking-save.xml
+    - python -c 'from tests.api.booking_data import export_ci_cancel_receipt; export_ci_cancel_receipt()'
+
+# Aynı pipeline'daki kayıt işinden yalnız Rez_ID/ortam/durum dosyasını alır.
+api_booking_cancel_dev:
+  extends: .playwright_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    E2E_ALLOW_WRITE: "true"
+  needs:
+    - job: api_booking_save_dev
+      artifacts: true
+  resource_group: "fys-python-dev"
+  interruptible: false
+  rules:
+    - when: manual
+      allow_failure: true
+  artifacts:
+    reports:
+      junit: test-results/dev-api-booking-cancel.xml
+    paths:
+      - test-results/
+      - reports/html/
+      - reports/api_xml/
+  script:
+    - cp reports/api_bookings/ci_cancel_receipt.json reports/api_bookings/son_rezervasyon.json
+    - REPORT_NAME=dev-api-booking-cancel python -m pytest -vv --capture=tee-sys tests/api/test_rezervasyon_iptal.py --run-broker-cancel --tracing=off --video=off --screenshot=off --html=reports/html/dev-api-booking-cancel.html --self-contained-html --junitxml=test-results/dev-api-booking-cancel.xml
+
+.e2e_python:
+  extends: .playwright_python
+  variables:
+    E2E_ALLOW_WRITE: "true"
+  interruptible: false
+  timeout: 90m
+  rules:
+    # Run pipeline ekranında RUN_E2E=true verilirse otomatik çalışır.
+    - if: '$RUN_E2E == "true"'
+      when: on_success
+      allow_failure: false
+    # Değişken verilmezse işin yanındaki Play düğmesiyle elle başlatılabilir.
+    - when: manual
+      allow_failure: true
+
+short_term_tests:
+  extends: .e2e_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-dev"
+  script:
+    - REPORT_NAME=dev-short-term python -m pytest -vv --capture=tee-sys tests/test_02_reservation.py --html=reports/html/dev-short-term.html --self-contained-html --junitxml=test-results/dev-short-term.xml
+
+corporate_short_term_tests:
+  extends: .e2e_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-dev"
+  script:
+    - REPORT_NAME=dev-corporate-short-term python -m pytest -vv --capture=tee-sys tests/test_04_corporate.py --html=reports/html/dev-corporate-short-term.html --self-contained-html --junitxml=test-results/dev-corporate-short-term.xml
+
+monthly_reservation_tests:
+  extends: .e2e_python
+  tags:
+    - new-runner
+  variables:
+    TEST_ENV: "dev"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-dev"
+  script:
+    - REPORT_NAME=dev-monthly python -m pytest -vv --capture=tee-sys tests/test_08_monthly_reservation.py --html=reports/html/dev-monthly.html --self-contained-html --junitxml=test-results/dev-monthly.xml
+
+long_term_tests:
+  extends: .e2e_python
+  variables:
+    TEST_ENV: "dev"
+    ACTIVE_ROLE: "long"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-dev"
+  script:
+    - REPORT_NAME=dev-long-term python -m pytest -vv --capture=tee-sys tests/test_03_long_term_rental.py --html=reports/html/dev-long-term.html --self-contained-html --junitxml=test-results/dev-long-term.xml
+
+vehicle_washing_tests:
+  extends: .e2e_python
+  variables:
+    TEST_ENV: "validation"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "true"
+  resource_group: "fys-python-validation"
+  script:
+    - REPORT_NAME=validation-vehicle-washing python -m pytest -vv --capture=tee-sys tests/test_06_Standart_Yikama.py --html=reports/html/validation-vehicle-washing.html --self-contained-html --junitxml=test-results/validation-vehicle-washing.xml
+
+rental_return_fuel_tests:
+  extends: .e2e_python
+  variables:
+    TEST_ENV: "validation"
+    ACTIVE_ROLE: "short"
+    E2E_ALLOW_WRITE: "true"
+  # Araç yıkama ile aynı validation verisini kullandığı için paralel çalışmaz.
+  resource_group: "fys-python-validation"
+  script:
+    - REPORT_NAME=validation-rental-return-fuel python -m pytest -vv --capture=tee-sys tests/test_07_Kiralama_Donusu_Yakit.py --html=reports/html/validation-rental-return-fuel.html --self-contained-html --junitxml=test-results/validation-rental-return-fuel.xml

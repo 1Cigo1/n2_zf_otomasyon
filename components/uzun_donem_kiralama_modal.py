@@ -1,5 +1,3 @@
-import re
-
 class UzunDonemModal:
     def __init__(self,page):
         self.page=page
@@ -21,5 +19,5 @@ class UzunDonemModal:
         sözlesme_aciklama.fill("sözleşme yapıldı")
         self.page.wait_for_timeout(500)
 
-        söz_kyt_btn=self.page.get_by_role("button", name="Kaydet").click()
+        self.page.get_by_role("button", name="Kaydet").click()
         self.page.wait_for_timeout(500)

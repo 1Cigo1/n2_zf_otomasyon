@@ -8,8 +8,8 @@ class EhliyetModal:
 
 
             
-        dogum_yeri_label = self.page.locator("label").filter(has_text="Doğum Yeri (Ülke)")
-        dogum_yeri_label.locator("..").first.click(force=True)
+        dogum_yeri_label = self.page.get_by_role("textbox", name="Doğum Yeri (Ülke) Doğum Yeri")
+        dogum_yeri_label.click()
         self.page.keyboard.type("Turkey", delay=50) 
         self.page.wait_for_timeout(3000)
         self.page.get_by_role("option").first.click(force=True)
@@ -18,16 +18,16 @@ class EhliyetModal:
    
         
         
-        il_label = self.page.locator("label").filter(has_text="Doğum Yeri (İl)")
-        il_label.locator("..").first.click(force=True)
+        il_label = self.page.get_by_role("textbox", name="Doğum Yeri (İl) Doğum Yeri (İ")
+        il_label.click()
         self.page.wait_for_timeout(500)
         self.page.get_by_role("option").first.click(force=True)   
         
         self.page.wait_for_timeout(1000)
         
         
-        ilce_label = self.page.locator("label").filter(has_text="Doğum Yeri (İlçe)")
-        ilce_label.locator("..").first.click(force=True)
+        ilce_label = self.page.get_by_role("textbox", name="Doğum Yeri (İlçe) Doğum Yeri")
+        ilce_label.click()
         self.page.wait_for_timeout(500)
         self.page.get_by_role("option").first.click(force=True)
 

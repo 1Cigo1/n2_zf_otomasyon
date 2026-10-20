@@ -1,0 +1,220 @@
+image: mcr.microsoft.com/playwright:v1.63.0-noble
+
+stages: [check, test]
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  RUN_WASHING: "false"
+  RUN_SHORT_TERM: "false"
+  RUN_CORPORATE_SHORT_TERM: "false"
+  RUN_MONO: "false"
+  RUN_BROKER_SAVE: "false"
+  RUN_BROKER_CANCEL: "false"
+
+cache:
+  key:
+    files: [package-lock.json]
+  paths: [.npm/]
+
+default:
+  before_script:
+    - npm ci --prefer-offline
+
+local-checks:
+  stage: check
+  script:
+    - npm run test:local
+    - TEST_ENV=all npm run test:list
+
+.live-tests:
+  stage: test
+  parallel:
+    matrix:
+      - TEST_ENV: [validation, dev]
+  resource_group: "fys-$TEST_ENV"
+  timeout: 15m
+  artifacts:
+    when: always
+    expire_in: 7 days
+    access: developer
+    paths: [test-results/]
+    reports:
+      junit: test-results/junit.xml
+
+login-and-api:
+  extends: .live-tests
+  script:
+    - npx playwright test --grep '@login|@api' --grep-invert '@mono-api|@reservation-api'
+
+mono-api:
+  extends: .live-tests
+  script:
+    - npm run test:mono-api
+
+reservation-api:
+  extends: .live-tests
+  script:
+    - npm run test:reservation-api
+
+mono-customer:
+  extends: .live-tests
+  variables:
+    ALLOW_WRITE_TESTS: "true"
+  script:
+    - npm run test:mono
+  rules:
+    - if: '$RUN_MONO == "true"'
+      when: on_success
+    - when: manual
+      allow_failure: true
+
+vehicle-washing:
+  extends: .live-tests
+  variables:
+    ALLOW_WRITE_TESTS: "true"
+  script:
+    - npm run test:washing
+  rules:
+    - if: '$RUN_WASHING == "true"'
+      when: on_success
+    - when: manual
+      allow_failure: true
+
+short-term-reservation:
+  extends: .live-tests
+  variables:
+    ALLOW_WRITE_TESTS: "true"
+    VALIDATION_SHORT_TERM_START_OFFSET_DAYS: "0"
+    DEV_SHORT_TERM_START_OFFSET_DAYS: "0"
+  script:
+    - npm run test:short-term
+  rules:
+    - if: '$RUN_SHORT_TERM == "true"'
+      when: on_success
+    - when: manual
+      allow_failure: true
+
+corporate-short-term-reservation:
+  stage: test
+  variables:
+    TEST_ENV: "validation"
+    ALLOW_WRITE_TESTS: "true"
+  resource_group: "fys-validation"
+  interruptible: false
+  timeout: 15m
+  script:
+    - npm run test:corporate
+  artifacts:
+    when: always
+    expire_in: 3 days
+    access: developer
+    paths: [test-results/]
+    reports:
+      junit: test-results/junit.xml
+  environment:
+    name: fys/validation
+    action: verify
+    deployment_tier: testing
+  rules:
+    - if: '$CI_COMMIT_REF_PROTECTED == "true" && $CI_PIPELINE_SOURCE == "schedule" && $RUN_CORPORATE_SHORT_TERM == "true"'
+      when: on_success
+    - if: '$CI_COMMIT_REF_PROTECTED == "true" && $CI_PIPELINE_SOURCE == "web"'
+      when: manual
+      allow_failure: false
+    - when: never
+
+# Broker işleri yalnız dev ortamında ve Play düğmesiyle çalışır.
+.broker-dev:
+  stage: test
+  variables:
+    TEST_ENV: "dev"
+    ALLOW_WRITE_TESTS: "false"
+  timeout: 15m
+  artifacts:
+    when: always
+    expire_in: 7 days
+    access: developer
+    paths:
+      - test-results/
+      - reports/api_xml/
+    reports:
+      junit: test-results/junit.xml
+  rules:
+    - when: manual
+      allow_failure: true
+
+broker-get-dev:
+  extends: .broker-dev
+  script:
+    - npm run test:broker:read
+
+broker-booking-save-dev:
+  extends: .broker-dev
+  variables:
+    ALLOW_WRITE_TESTS: "true"
+    RUN_BROKER_SAVE: "true"
+  resource_group: "fys-dev"
+  interruptible: false
+  artifacts:
+    paths:
+      - test-results/
+      - reports/api_xml/
+      - reports/api_bookings/ci_cancel_receipt.json
+  script:
+    - npm run test:broker:save
+
+broker-booking-cancel-dev:
+  extends: .broker-dev
+  variables:
+    ALLOW_WRITE_TESTS: "true"
+    RUN_BROKER_CANCEL: "true"
+  needs:
+    - job: broker-booking-save-dev
+      artifacts: true
+  resource_group: "fys-dev"
+  interruptible: false
+  script:
+    - cp reports/api_bookings/ci_cancel_receipt.json reports/api_bookings/son_rezervasyon.json
+    - npm run test:broker:cancel
+
+.ui-new-write:
+  stage: test
+  variables:
+    TEST_ENV: "dev"
+    ALLOW_WRITE_TESTS: "true"
+  resource_group: "fys-dev"
+  interruptible: false
+  timeout: 90m
+  artifacts:
+    when: always
+    expire_in: 7 days
+    access: developer
+    paths: [test-results/]
+    reports:
+      junit: test-results/junit.xml
+  rules:
+    - when: manual
+      allow_failure: true
+
+long-term-reservation:
+  extends: .ui-new-write
+  script:
+    - npm run test:long-term
+
+monthly-reservation:
+  extends: .ui-new-write
+  script:
+    - npm run test:monthly
+
+fayt-maintenance:
+  extends: .ui-new-write
+  script:
+    - npm run test:fayt-maintenance
+
+fayt-rental-return-fuel:
+  extends: .ui-new-write
+  variables:
+    TEST_ENV: "validation"
+  resource_group: "fys-validation"
+  script:
+    - npm run test:fayt-fuel

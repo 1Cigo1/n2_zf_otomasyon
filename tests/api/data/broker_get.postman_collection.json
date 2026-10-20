@@ -1,0 +1,12 @@
+{
+  "info": {
+    "name": "DEV-FYS-REMED - yalnız parametresiz GET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {"name": "Ek Hizmetler", "request": {"method": "GET", "url": "{{BASE_URL}}/api/broker-service/insurance/"}},
+    {"name": "Ofisler", "request": {"method": "GET", "url": "{{BASE_URL}}/api/broker-service/locations/"}},
+    {"name": "Araçlar", "request": {"method": "GET", "url": "{{BASE_URL}}/api/broker-service/cars/"}},
+    {"name": "Araç Grupları", "request": {"method": "GET", "url": "{{BASE_URL}}/api/broker-service/group/"}}
+  ]
+}
