@@ -1,9 +1,29 @@
-# Python sanal ortamı & Önbellek
-venv/
-.pytest_cache/
-__pycache__/
+# İşletim sistemi dosyaları
+.DS_Store
 
-# Şifreler ve Oturum Dosyaları
+# Python sanal ortamı ve önbellek
+venv/
+.venv/
+.pytest_cache/
+.cache/
+__pycache__/
+*.py[cod]
+.coverage
+htmlcov/
+
+# Şifreler ve tarayıcı oturum profilleri
 .env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
 auth_state.json
 user_data/
+
+# Test çalıştırma çıktıları
+pytestdebug.log
+reports/
+test-results/
+playwright-report/
+allure-results/
+artifacts/

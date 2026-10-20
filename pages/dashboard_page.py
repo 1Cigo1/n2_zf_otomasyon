@@ -1,5 +1,8 @@
+import re
+
 from pages.base_page import BasePage
 from components.mona_modal import MonoModal
+from playwright.sync_api import expect
 
 class DashboardPage(BasePage):
     def __init__(self, page):
@@ -20,13 +23,41 @@ class DashboardPage(BasePage):
         self.page.wait_for_timeout(4000)
   
     def logout_click(self):
+        # Açık bir dialog/scrim profil butonunun tıklanmasını engelleyebilir.
+        expect(
+            self.page.locator('.v-dialog[role="dialog"]:visible')
+        ).to_have_count(0, timeout=15_000)
+        expect(
+            self.page.locator('.v-overlay__scrim:visible')
+        ).to_have_count(0, timeout=15_000)
 
-        user_sila=self.page.get_by_role("button", name="S Sıla Ayas")
-        user_baskan=self.page.get_by_role("button", name="B Barbaros Fuat Başkan")
-        user_gülsüm=self.page.get_by_role("button", name="G Gülsün Aydın")
-        user_silaDanisman= self.page.get_by_role("button", name="S Sıla (satış danışmanı) Ayas")
-        user_sila.or_(user_baskan).or_(user_gülsüm).or_(user_silaDanisman).click()
-        self.page.get_by_text("Oturumu Kapat").click()
+        ust_menu = self.page.locator("header, .v-toolbar").first
+        expect(ust_menu).to_be_visible(timeout=15_000)
+
+        profil_butonu = ust_menu.get_by_role("button").last
+        expect(profil_butonu).to_be_visible(timeout=15_000)
+        profil_butonu.click()
+
+        # Sayfada gizli kopyalar bulunabildiği için yalnızca açılan Vuetify
+        # menüsündeki çıkış seçeneğini kullan.
+        aktif_menu = self.page.locator(".v-overlay--active").filter(
+            has=self.page.get_by_text("Oturumu Kapat", exact=True)
+        ).last
+        expect(aktif_menu).to_be_visible(timeout=10_000)
+
+        cikis_secenegi = aktif_menu.get_by_text("Oturumu Kapat", exact=True)
+        expect(cikis_secenegi).to_be_visible(timeout=10_000)
+        cikis_secenegi.click()
+
+        expect(self.page).to_have_url(
+            re.compile(r"/auth/login(?:[/?#]|$)", re.IGNORECASE),
+            timeout=30_000,
+        )
+        expect(
+            self.page.get_by_role(
+                "textbox", name="E-posta adresinizi giriniz"
+            )
+        ).to_be_visible(timeout=15_000)
    
 
     def mono_menu(self):
@@ -39,6 +70,7 @@ class DashboardPage(BasePage):
         self.page.wait_for_timeout(4000)
        
         self.page.get_by_role("link", name="󰓎 Özel Tanımlı Müşteriler").click()
+        self.page.wait_for_timeout(4000)
         self.page.get_by_role("button", name="Yeni").click()
         randomIsim=self.page.get_by_role("textbox", name="Müşteriler Müşteriler")
         randomIsim.fill(mono_getir.randomKimlik)
@@ -59,4 +91,14 @@ class DashboardPage(BasePage):
        
         self. page.get_by_role("textbox", name="Herhangi bir şey arayın").press("Enter")
         self.page.wait_for_timeout(3000)
-        self.page.locator(".v-btn.v-theme--light.text-primary").first.click(force=True)
+        self.page.locator("table tbody tr").first.locator(
+            "button:has(i.mdi-file-sign)"
+        ).click()
+        expect(self.page).to_have_url(
+            re.compile(r"/reservation/.*/return/"), timeout=30000
+        )
+
+    def go_to_fayt(self):
+
+        self.page.get_by_title("Filo Araçları Yönetim").click()
+        self.page.wait_for_timeout(1000)
